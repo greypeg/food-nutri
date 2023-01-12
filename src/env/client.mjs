@@ -13,7 +13,8 @@ export const formatErrors = (
         return `${name}: ${value._errors.join(", ")}\n`;
     })
     .filter(Boolean);
-
+  
+    
 if (!_clientEnv.success) {
   console.error(
     "❌ Invalid environment variables:\n",

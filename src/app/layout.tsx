@@ -1,5 +1,7 @@
 import React from 'react'
 import Header from "./header/page"
+import Footer from "./footer/page"
+import "../styles/globals.css";
 
 export default function RootLayout({
   children,
@@ -12,6 +14,7 @@ export default function RootLayout({
       <body>
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   )

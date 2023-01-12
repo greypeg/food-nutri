@@ -3,8 +3,8 @@ import React from 'react'
 
 type Props = {}
 
-export default function page({}: Props) {
+export default function Contact({}: Props) {
   return (
-    <div>home</div>
+    <div>Contact</div>
   )
 }
