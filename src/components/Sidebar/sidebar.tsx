@@ -20,46 +20,45 @@ const Sidebar = () => {
         { name: "Ημερολόγιο", link: "/", icon: FiMessageSquare },
         { name: "Οικονομικά", link: "/", icon: TbReportAnalytics, margin: true },
         { name: "Αρχεία", link: "/", icon: FiFolder },
-        { name: "Ρυθμίσεις", link: "/", icon: RiSettings4Line,  margin: true  },
+        { name: "Ρυθμίσεις", link: "/", icon: RiSettings4Line, margin: true },
     ];
     return (
         <div
             className={`bg-red-600 min-h-screen ${toggle ? "w-72" : "w-16"
                 } duration-500 text-gray-100 px-4`}
         >
-            <div className={`${toggle ? "w-72" : 'w-20'} bg-red-600 min-h-screen`}>
-                <div className="py-3 flex justify-end"><HiMenuAlt3 size={26} className="cursor-pointer"
-                    onClick={() => setToggle(!toggle)} />
-                </div>
-                <div className="mt-4 flex flex-col gap-4 relative">
-                    {menus?.map((menu, i) => (
-                        <Link
-                            href={menu?.link}
-                            key={i}
-                            className={` ${menu?.margin && "mt-5"
-                                } group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md`}
+            <div className="py-3 flex justify-end"><HiMenuAlt3 size={26} className="cursor-pointer"
+                onClick={() => setToggle(!toggle)} />
+            </div>
+            <div className="mt-4 flex flex-col gap-4 relative">
+                {menus?.map((menu, i) => (
+                    <Link
+                        href={menu?.link}
+                        key={i}
+                        className={` ${menu?.margin && "mt-5"
+                            } group flex items-center text-sm gap-3.5 font-medium p-2 hover:bg-gray-800 rounded-md`}
+                    >
+                        <div>{React.createElement(menu?.icon, { size: "20" })}</div>
+                        <h2
+                            style={{
+                                transitionDelay: `${i + 1}00ms`,
+                            }}
+                            className={`whitespace-pre duration-500 ${!toggle && "opacity-0 translate-x-28 overflow-hidden"
+                                }`}
                         >
-                            <div>{React.createElement(menu?.icon, { size: "20" })}</div>
-                            <h2
-                                style={{
-                                    transitionDelay: `${i + 1}00ms`,
-                                }}
-                                className={`whitespace-pre duration-500 ${!toggle && "opacity-0 translate-x-28 overflow-hidden"
-                                    }`}
-                            >
-                                {menu?.name}
-                            </h2>
-                            <h2
-                                className={`${toggle && "hidden"
-                                    } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
-                            >
-                                {menu?.name}
-                            </h2>
-                        </Link>
-                    ))}
-                </div>
+                            {menu?.name}
+                        </h2>
+                        <h2
+                            className={`${toggle && "hidden"
+                                } absolute left-48 bg-white font-semibold whitespace-pre text-gray-900 rounded-md drop-shadow-lg px-0 py-0 w-0 overflow-hidden group-hover:px-2 group-hover:py-1 group-hover:left-14 group-hover:duration-300 group-hover:w-fit  `}
+                        >
+                            {menu?.name}
+                        </h2>
+                    </Link>
+                ))}
             </div>
         </div>
+
     );
 };
 
