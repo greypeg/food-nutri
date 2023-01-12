@@ -59,23 +59,23 @@ export default function Header({ }: Props) {
               }`}
           >
             <ul className="items-center justify-center h-100 space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-white hover:text-indigo-200">
-                <Link href={'/'} onClick={() => setNavbar(false)}>Home</Link>
+              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200 sm:transition-none">
+                <Link href={'/'} onClick={() => setNavbar(false)}>Αρχική</Link>
               </li>
-              <li className="text-white hover:text-indigo-200">
-                <Link href={'/about'} onClick={() => setNavbar(false)}>About Us</Link>
+              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200">
+                <Link href={'/about'} onClick={() => setNavbar(false)}>Σχετικά με</Link>
               </li>
-              <li className="text-white hover:text-indigo-200">
-                <Link href={'/pricing'} onClick={() => setNavbar(false)}>Pricing</Link>
+              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200">
+                <Link href={'/pricing'} onClick={() => setNavbar(false)}>Τιμοκατάλογος</Link>
               </li>
-              <li className="text-white hover:text-indigo-200">
-                <Link href={'/contact'} onClick={() => setNavbar(false)}>Contact Us</Link>
+              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200">
+                <Link href={'/contact'} onClick={() => setNavbar(false)}>Επικοινωνία</Link>
               </li>
             </ul>
 
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
               <a
-                href="/"
+                href="/login"
                 className="inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
               >
                 Log in
@@ -85,7 +85,7 @@ export default function Header({ }: Props) {
         </div>
         <div className="hidden space-x-2 md:inline-block">
           <a
-            href="/"
+            href="/login"
             className="px-4 py-2 text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
           >
             Log in
