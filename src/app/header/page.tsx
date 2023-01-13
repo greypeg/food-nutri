@@ -2,18 +2,19 @@
 import Link from 'next/link';
 import React from 'react'
 import { useState } from 'react';
+import Image from 'next/image'
 
 type Props = {}
 
 export default function Header({ }: Props) {
   const [navbar, setNavbar] = useState(false);
   return (
-    <nav className="w-full bg-[#FDA769] shadow duration-500">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+    <nav className="w-full shadow overflow-hidden">
+      <div className={`justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 ${navbar ? "sm:min-h-screen " : "" } `}>
         <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+          <div className="flex items-center justify-between py-3 md:py-5 md:block text-white">
             <a href="/">
-              <h2 className="text-2xl font-bold text-white">LOGO</h2>
+            Logo
             </a>
             <div className="md:hidden">
               <button
@@ -59,16 +60,16 @@ export default function Header({ }: Props) {
               }`}
           >
             <ul className="items-center justify-center h-100 space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-200 sm:transition-none">
+              <li className="text-white hover:text-indigo-200 sm:text-center">
                 <Link href={'/'} onClick={() => setNavbar(false)}>Αρχική</Link>
               </li>
-              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200">
+              <li className="text-white hover:text-indigo-200 sm:text-center">
                 <Link href={'/about'} onClick={() => setNavbar(false)}>Σχετικά με</Link>
               </li>
-              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200">
+              <li className="text-white hover:text-indigo-200 sm:text-center">
                 <Link href={'/pricing'} onClick={() => setNavbar(false)}>Τιμοκατάλογος</Link>
               </li>
-              <li className="text-white hover:text-indigo-200 sm:text-center md:transition-transform ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-200">
+              <li className="text-white hover:text-indigo-200 sm:text-center">
                 <Link href={'/contact'} onClick={() => setNavbar(false)}>Επικοινωνία</Link>
               </li>
             </ul>

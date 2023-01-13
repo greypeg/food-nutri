@@ -13,14 +13,19 @@ export default function Login({ }: Props) {
     const { data: session } = useSession()
     if (session) {
         return <>Welcome login {session.user?.email}
-            <button onClick={() => redirect()}>Go to Dashboard</button>
             <button onClick={() => signOut()}>Sign out</button></>
     }
     else {
         return (
             <>
                 <div><p>You are not signed in</p></div>
-                <button onClick={() => signIn()}>Sign in</button>
+                <button
+                    onClick={() =>
+                        signIn("Google")
+                    }
+                >
+                    Sign in
+                </button>
             </>
 
         )
